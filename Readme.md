@@ -1,5 +1,6 @@
 ## Complier Python using pyinstaller with console
 
 ```bash
-pyinstaller --onefile --console Special_HeatMap\app_001.py
+cd <directory>
+pyinstaller --onefile --console app_001.py --name special_heatmap
 ```

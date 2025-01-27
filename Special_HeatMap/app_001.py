@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import configparser
-import os
+import os, re
 import sys
 import datetime
 
@@ -47,8 +47,8 @@ if 'History' not in config.sections():
     input()
 
 # ดึงข้อมูล upper_data และ lower_data
-upper_data = config.get('History', 'upper_data').split(', ')
-lower_data = config.get('History', 'lower_data').split(', ')
+upper_data = list(map(int, re.split(r',\s*', config.get('History', 'upper_data'))))
+lower_data = list(map(int, re.split(r',\s*', config.get('History', 'lower_data'))))
 
 ## สร้างข้อมูลตัวเลข 2 หลักแบบสุ่ม (upper และ lower)
 # upper_data = ['93', '53', '36', '57', '18', '98', '01', '41', '92', '85', '89', '67', '65']

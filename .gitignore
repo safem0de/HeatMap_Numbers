@@ -1,2 +1,5 @@
 /app_001.spec
-/build
+*/build/*
+*/dist/*
+*.txt
+*.spec
